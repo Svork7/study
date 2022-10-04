@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="onClick()">btn1</button>
+  <button id="btn2">btn2</button>
+  <button id="btn3">btn3</button>
+  <textarea name="" id="" cols="30" rows="10" class="text-area"></textarea>
+  <script>
+    const textArea = document.querySelector('textarea')
+    function key(e) {
+      console.log(e.type, e.code, e.key, e.repeat)
+    }
+    textArea.addEventListener('keydown', key)
+    textArea.addEventListener('keyup', key)
+    function onClick() {
+      alert('Кнопка нажата');
+    }
+
+    const btn2 = document.getElementById('btn2')
+    btn2.onclick = onClick
+
+    const btn3 = document.getElementById('btn3')
+    btn3.addEventListener('click', onClick)
+  </script>
+</body>
+</html>
